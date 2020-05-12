@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "database",
+      "script": "docker-compose -f ./database/docker-compose.yml up",
+      "watch": true
+    },
+    {
+      "name": "api",
+      "script": "cd ./api && yarn nodemon ./src/index.js",
+      "watch": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}

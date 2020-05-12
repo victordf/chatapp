@@ -1,0 +1,10 @@
+postgres:
+  image: postgres:latest
+  ports:
+    - '5433:5432'
+  environment:
+    POSTGRES_USER: 'root'
+    POSTGRES_PASSWORD: '123456'
+    POSTGRES_DB: 'chatapp'
+  volumes:
+    - ./init:/docker-entrypoint-initdb.d/
